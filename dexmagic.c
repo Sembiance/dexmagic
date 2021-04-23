@@ -37,7 +37,7 @@ static void parse_options(int argc, char **argv)
 
 	for(i=1;i<argc;i++)
 	{
-		int lastarg = i==argc-1;
+		//int lastarg = i==argc-1;
 
 		if(!strcmp(argv[i],"-h") || !strcmp(argv[i], "--help"))
 		{
@@ -151,7 +151,7 @@ int main(int argc, char ** argv)
 		printf("%s\n", result);
 
 	cleanup:
-	if(data>0)
+	if(data!=0)
 		munmap(data, s.st_size);
 	if(infd>=0)
 		close(infd);
